@@ -12,8 +12,7 @@ int main() {
     Sprite s(t1);
     
     bool isMove = false;
-    float dx = 0;
-    float dy = 0;
+    float dx = 0; dy = 0;
     
     while (window.isOpen()) {
         Vector2i pos = Mouse::getPosition(window);
@@ -39,7 +38,7 @@ int main() {
             
         }
         
-        if (isMove) s.setPosition(pos.x - dx, pos.y - dy);
+        if (isMove) s.setPostion(pos.x - dx, pos.y - dy);
         
         // draw //
         window.clear();
