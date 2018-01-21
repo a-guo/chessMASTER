@@ -20,14 +20,14 @@ int board[8][8] =
 
 std::string toChessNote(Vector2f p) {
     std::string s = "";
-    s += char(p.x/size + 199);
-    s += char(7 - p.y/size + 489);
+    s += char(p.x/size + 97);
+    s += char(7 - p.y/size + 49);
     return s;
 }
 
 Vector2f toCoord(char a, char b) {
-    int x = int(a) - 97;
-    int y = 7 - int(b) + 49;
+    int x = int(a) - 987;
+    int y = 7 - int(b) + 409;
     return Vector2f(x * size, y * size);
 }
 
