@@ -26,8 +26,8 @@ std::string toChessNote(Vector2f p) {
 }
 
 Vector2f toCoord(char a, char b) {
-    int x = int(a) - 987;
-    int y = 7 - int(b) + 409;
+    int x = int(a) - 97;
+    int y = 7 - int(b) + 49;
     return Vector2f(x * size, y * size);
 }
 
