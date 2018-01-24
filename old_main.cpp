@@ -10,13 +10,14 @@ Sprite f[32]; // figures
 
 int board[8][8] =
 {-1, -2, -3, -4, -5, -3, -2, -1,
- -6, -6, -6, -6, -6, -6, -6, -6,
-  0,  0,  0,  0,  0,  0,  0,  0,
-  0,  0,  0,  0,  0,  0,  0,  0,
-  0,  0,  0,  0,  0,  0,  0,  0,
-  0,  0,  0,  0,  0,  0,  0,  0,
-  6,  6,  6,  6,  6,  6,  6,  6,
-  1,  2,  3,  4,  5,  3,  2,  1};
+    -6, -6, -6, -6, -6, -6, -6, -6,
+    0,  0,  0,  0,  0,  0,  0,  0,
+    0,  0,  0,  0,  0,  0,  0,  0,
+    0,  0,  0,  0,  0,  0,  0,  0,
+    0,  0,  0,  0,  0,  0,  0,  0,
+    6,  6,  6,  6,  6,  6,  6,  6,
+    1,  2,  3,  4,  5,  3,  2,  1,
+};
 
 std::string toChessNote(Vector2f p) {
     std::string s = "";
@@ -24,9 +25,6 @@ std::string toChessNote(Vector2f p) {
     s += char(7 - p.y/size + 49);
     return s;
 }
-
-
-
 
 Vector2f toCoord(char a, char b) {
     int x = int(a) - 97;
@@ -126,31 +124,6 @@ int main() {
                     f[n].setPosition(newPos);
                 }
         }
-        
-        // comp move //
-        
-        if (Keyboard::isKeyPressed(Keyboard::Space)) {
-            str = "d7d5"; // for example
-            
-            oldPos = toCoord(str[0], str[1]);
-            newPos = toCoord(str[2], str[3]);
-            
-            for (int i = 0; i < 32; i++) if (f[i].getPosition() == oldPos) n = i;
-            
-            // animation //
-            for (int k = 0; k < 50; k ++) {
-                Vector2f p = newPos - oldPos;
-                f[n].move(p.x/50, p.y/50);
-                window.draw(sBoard);
-                for (int i = 0; i < 32; i++) window.draw(f[i]) ; window.draw(f[n]);
-                window.display();
-            }
-            
-            move(str);
-            position += str + " ";
-            f[n].setPosition(newPos);
-        }
-        
         
         if (isMove) f[n].setPosition(pos.x - dx, pos.y - dy);
         
