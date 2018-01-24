@@ -27,7 +27,6 @@ std::string toChessNote(Vector2f p) {
 
 
 
-
 Vector2f toCoord(char a, char b) {
     int x = int(a) - 97;
     int y = 7 - int(b) + 49;
@@ -134,9 +133,15 @@ int main() {
             
             oldPos = toCoord(str[0], str[1]);
             newPos = toCoord(str[2], str[3]);
+
             
             for (int i = 0; i < 32; i++) if (f[i].getPosition() == oldPos) n = i;
             
+
+            
+            for (int i = 0; i < 32; i++) if (f[i].getPosition() == oldPos) n = i;
+            
+
             // animation //
             for (int k = 0; k < 50; k ++) {
                 Vector2f p = newPos - oldPos;
